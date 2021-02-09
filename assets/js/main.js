@@ -19,7 +19,7 @@ $('#nav-button-mute-channels').click(() => {
 async function updateStatus() {
     try {
         await fetch('http://localhost:8021/status')
-        $('#status').animate({'background': 'rgb(0,150,5)'}, 7500)
+        $('#status').css('background', 'rgb(0,150,5)')
         $('#status-label').text('Online')
         $('.hidden').removeClass('hidden')
     } catch (e) {

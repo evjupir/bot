@@ -1,8 +1,6 @@
 <% for(let i=0; i < input.length; i++){ const data=input[i] %>
     <div id="channel-template" class="channel<% if(data.isMuted){ %> muted<% } %>" style="margin: 8px">
-        <span class="channelId" style="display: none;">
-            <%- data.channelId %>
-        </span>
+        <span class="channelId" style="display: none;"><%- data.channelId %></span>
         <div class="col col-channel" style="
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
