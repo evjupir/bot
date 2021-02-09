@@ -42,17 +42,7 @@ $('#update-status').click(updateStatus)
 function renderChannels() {
     fetch('http://localhost:8021/channels').then(r => r.json()).then((body) => {
         fetch('assets/templates/channels.ejs').then(r => r.text()).then(t => {
-            let content = body.sort((a, b) => {
-                console.log(a, b)
-                let fa = a.serverName.toLowerCase(),
-                    fb = b.serverName.toLowerCase();
-            
-                if (fa < fb) { return -1; } if (fa > fb) {
-                    return 1;
-                }
-                return 0;
-            })
-            $('#channelContainer').html(ejs.render(t, { 'input': content}));
+            $('#channelContainer').html(ejs.render(t, { 'input': body}));
             $('.channel').children().click((data) => {
                 const muted = $(data.currentTarget.parentElement).hasClass('muted')
                 const channelId = data.currentTarget.parentElement.firstElementChild.innerText.replace(/\s+/g, '')

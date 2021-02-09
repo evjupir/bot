@@ -36,3 +36,8 @@
 .hidden {
     display: none;
 }
+
+.muted div{
+    background-color: rgb(164, 164, 164);
+    color: white;
+}
