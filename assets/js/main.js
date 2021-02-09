@@ -44,7 +44,7 @@ function renderChannels() {
             $('#channelContainer').html(ejs.render(t, { 'input': body }));
             $('.channel').children().click((data) => {
                 const muted = $(data.currentTarget.parentElement).hasClass('muted')
-                const channelId = data.currentTarget.parentElement.firstElementChild.innerText
+                const channelId = data.currentTarget.parentElement.firstElementChild.innerText.replace(/\s+/g, '')
 
                 if (muted) {
                     fetch('http://localhost:8021/channels/unmute/' + channelId)
