@@ -1,5 +1,6 @@
 let currentView = 'startseite'
 
+
 $('#nav-button-startseite').click(() => {
     if (currentView !== 'startseite') {
         currentView = 'startseite'
@@ -57,8 +58,8 @@ function renderChannels() {
     })
 }
 
-function renderChannelsRec(){
-    if(currentView === 'mute-channels'){
+function renderChannelsRec() {
+    if (currentView === 'mute-channels') {
         renderChannels()
     }
     setTimeout(renderChannelsRec, 5000)
